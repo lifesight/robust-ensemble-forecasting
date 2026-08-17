@@ -1,0 +1,34 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Anil Kumar Singh
+
+This licence covers the derived data files in this repository:
+
+  data/corpus_99_series.csv              the qualified 99-series corpus
+  data/candidate_manifest_142_series.csv disposition of all 142 candidate series
+  forecasts/                             per-cell base-model point forecasts
+  results/                               per-cell and aggregate derived metrics
+
+You are free to share and adapt this material for any purpose, even commercially,
+provided you give appropriate credit, link to the license, and indicate if changes
+were made.
+
+License text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+-------------------------------------------------------------------------------
+Provenance and onward obligations
+
+These files are DERIVED from a publicly available e-commerce marketing dataset
+that the authors neither own nor collected. The upstream dataset is cited in the
+paper's Reproducibility and Data Availability statement.
+
+Two consequences follow, and anyone reusing these files should note both:
+
+1. The authors licence only their own contribution — the qualification screen, the
+   fitted forecasts, and the derived metrics. Any rights in the underlying source
+   data remain with its original publisher, and the upstream licence continues to
+   apply to it.
+
+2. Organisation and series identifiers are hashed in this deposit and no
+   organisation is named. Attempted re-identification of any organisation in this
+   dataset is not a permitted use.

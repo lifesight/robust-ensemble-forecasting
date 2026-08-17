@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Robust Ensemble Forecasting in Practice: Model Selection and Combination Across Heterogeneous Time Series"
+message: "If you use this dataset or code, please cite both the paper and the archived data release."
+type: software
+authors:
+  - family-names: Singh
+    given-names: Anil Kumar
+    affiliation: Lifesight
+  - family-names: Bhardwaj
+    given-names: Sanvi
+    affiliation: Lifesight
+    email: sanvi.b@lifesight.io
+  - family-names: Nair
+    given-names: Rajeev Aravindakshan
+    affiliation: Lifesight
+version: "1.0.0"
+repository-code: "https://github.com/lifesight/robust-ensemble-forecasting"
+url: "https://github.com/lifesight/robust-ensemble-forecasting"
+# Code in code/ is additionally available under the MIT License.
+license: "CC-BY-4.0"
+keywords:
+  - forecast combination
+  - ensemble forecasting
+  - model selection
+  - cross-series pooling
+  - demand forecasting
+  - marketing-mix modeling

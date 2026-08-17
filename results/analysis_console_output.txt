@@ -1,0 +1,125 @@
+=== AGGREGATE VALIDATION MAPE BY MODEL (the global selector's information) ===
+                mean  median
+catboost       0.285   0.241
+sarimax        0.303   0.259
+bayesianpymc   0.348   0.291
+prophet        0.364   0.297
+neuralprophet  0.407   0.315
+global validation winner by origin: {0: 'catboost', 1: 'catboost', 2: 'catboost'}
+GLOBAL PICK = catboost
+
+cells scored on all 12 methods: 293
+validation-to-test hit rate, per-cell selection : 0.218
+validation-to-test hit rate, constant global rule: 0.341
+matched-loss (val MAPE -> test MAPE) hit rate    : 0.259
+within-cell Spearman  val MAPE -> test MAPE  (matched)   : mean 0.139 median 0.200 frac>0 0.61
+within-cell Spearman  val MAPE -> test RelMAE (mismatched): mean 0.100 median 0.100 frac>0 0.58
+
+=== LEADERBOARD v4 (RelMAE = MAE / seasonal-naive MAE; lower is better) ===
+                mean  geomean  median    p90    p95    p99     max  beats_naive   mape  regret_mean  regret_max  avg_rank     lo     hi
+method                                                                                                                                 
+ens_trimmed    0.737    0.655   0.723  1.043  1.322  2.169   2.633        0.870  0.318        0.103       1.587     4.908  0.692  0.785
+catboost       0.747    0.671   0.733  1.069  1.321  1.938   2.718        0.857  0.331        0.113       2.143     5.778  0.705  0.796
+sel_global     0.747    0.671   0.733  1.069  1.321  1.938   2.718        0.857  0.331        0.113       2.143     5.778  0.705  0.796
+ens_wtd        0.754    0.669   0.720  1.077  1.415  2.254   3.736        0.874  0.329        0.121       2.982     4.775  0.704  0.807
+ens_mean       0.760    0.669   0.723  1.088  1.393  2.404   5.010        0.870  0.332        0.126       4.256     4.966  0.705  0.817
+ens_screened   0.763    0.672   0.721  1.084  1.410  2.746   5.010        0.874  0.332        0.130       4.256     5.078  0.709  0.823
+sel_val        0.803    0.703   0.761  1.113  1.568  2.725   3.010        0.826  0.346        0.169       2.168     6.696  0.750  0.861
+bayesianpymc   0.835    0.714   0.781  1.312  1.707  2.585   4.560        0.799  0.357        0.201       3.813     6.823  0.766  0.905
+neuralprophet  0.940    0.791   0.796  1.581  2.060  3.027   5.719        0.724  0.413        0.307       5.144     7.462  0.857  1.029
+prophet        0.960    0.794   0.807  1.633  2.456  3.251   7.944        0.703  0.420        0.326       7.369     7.544  0.862  1.073
+sarimax        1.025    0.849   0.841  1.524  2.194  3.872  18.491        0.689  0.461        0.391      17.738     8.474  0.916  1.179
+theta          1.355    1.035   0.964  2.333  3.551  7.055  14.275        0.543  0.622        0.721      13.595     9.717  1.220  1.514
+
+sel_global is numerically identical to 'catboost': True -> excluded from the rank analysis to avoid double-counting
+
+=== FRIEDMAN / NEMENYI (k=11, N=293) ===
+chi2 = 607.3  p = 4.85e-124   CD = 0.882
+method
+ens_wtd          4.355
+ens_trimmed      4.471
+ens_mean         4.526
+ens_screened     4.628
+catboost         5.278
+sel_val          6.114
+bayesianpymc     6.239
+neuralprophet    6.838
+prophet          6.906
+sarimax          7.768
+theta            8.877
+
+rank gap ens_trimmed vs global selection (= catboost) : 0.807  (not separable)
+rank gap ens_trimmed vs sel_val    : 1.643  (SEPARABLE)
+rank gap ens_trimmed vs catboost   : 0.807  (not separable)
+
+=== PAIRWISE vs ens_trimmed: Wilcoxon, Holm over 10 comparisons, with effect sizes ===
+               wins    n  mean_diff  rank_biserial   p_raw  p_holm
+theta           257  293    -0.6172         0.8206  0.0000   0.000
+sarimax         246  293    -0.2876         0.7332  0.0000   0.000
+prophet         217  293    -0.2227         0.6366  0.0000   0.000
+neuralprophet   212  293    -0.2030         0.6036  0.0000   0.000
+bayesianpymc    203  293    -0.0971         0.4970  0.0000   0.000
+sel_val         200  293    -0.0656         0.4103  0.0000   0.000
+catboost        165  293    -0.0098         0.1644  0.0147   0.059
+ens_mean        139  293    -0.0221         0.0244  0.7178   1.000
+ens_wtd         132  293    -0.0170        -0.0296  0.6610   1.000
+ens_screened    142  293    -0.0260         0.0647  0.3370   1.000
+
+=== TAIL METRICS: series-bootstrap CI on the DIFFERENCE (ens_trimmed - competitor) ===
+competitor stat  ref_level  comp_level   diff     lo     hi  p_ref_better  significant
+  catboost  P90      1.043       1.069 -0.001 -0.075  0.115         0.631        False
+  catboost  P95      1.322       1.321  0.021 -0.271  0.338         0.438        False
+  catboost  P99      2.169       1.938  0.234 -0.121  0.602         0.064        False
+  catboost  Max      2.633       2.718  0.070 -0.556  0.668         0.647        False
+   sel_val  P90      1.043       1.113 -0.097 -0.281  0.038         0.948        False
+   sel_val  P95      1.322       1.568 -0.272 -0.560 -0.011         0.978         True
+   sel_val  P99      2.169       2.725 -0.473 -0.960  0.258         0.908        False
+   sel_val  Max      2.633       3.010 -0.425 -0.849  0.108         0.968        False
+
+=== UNIT OF AGGREGATION ===
+             comparison cells_wins      cells_p series_wins     series_p orgs_wins   orgs_p
+ ens_trimmed vs sel_val    200/293 1.144828e-09       77/99 1.042236e-07     50/65 0.000016
+ens_trimmed vs catboost    165/293 1.474876e-02       58/99 7.393290e-02     35/65 0.528288
+
+=== HORIZON vs TRAINING LENGTH (dep. var: trimmed - catboost RelMAE) ===
+  intercept      -0.4147  (se 0.2501, t -1.66)
+  log n_test     +0.0005  (se 0.0925, t +0.01)
+  log n_train    +0.0621  (se 0.0828, t +0.75)
+  corr(log n_test, log n_train) = 0.887
+
+=== HORIZON TERCILES ===
+method  ens_trimmed  catboost  sel_global  sel_val  theta  mean_len  mean_train  oracle
+n_test                                                                                 
+short         0.761     0.800       0.800    0.849  1.601    88.520     476.602   0.665
+mid           0.753     0.754       0.754    0.790  1.427   123.990     663.577   0.637
+long          0.699     0.688       0.688    0.770  1.037   175.327     939.857   0.600
+
+=== SECOND REFERENCE DENOMINATOR: seasonal-naive-with-drift ===
+drift benchmark is harder than plain naive in 38% of cells
+               RelMAE vs naive  RelMAE vs naive+drift  rank vs naive  rank vs naive+drift
+method                                                                                   
+ens_trimmed              0.737                  0.725          4.908                4.908
+catboost                 0.747                  0.735          5.778                5.778
+sel_global               0.747                  0.735          5.778                5.778
+ens_wtd                  0.754                  0.741          4.775                4.775
+ens_mean                 0.760                  0.746          4.966                4.966
+ens_screened             0.763                  0.750          5.078                5.078
+sel_val                  0.803                  0.791          6.696                6.696
+bayesianpymc             0.835                  0.816          6.823                6.823
+neuralprophet            0.940                  0.925          7.462                7.462
+prophet                  0.960                  0.944          7.544                7.544
+sarimax                  1.025                  1.006          8.474                8.474
+theta                    1.355                  1.336          9.717                9.717
+(within-cell ranks are invariant to the denominator by construction; only the cross-cell aggregation weights change)
+
+=== PER-VERTICAL (bootstrap CI on trimmed - catboost, resampling series) ===
+             vertical  n_series  n_cells  trimmed  catboost  sel_val   diff     lo     hi
+              Apparel        21       61    0.762     0.706    0.788  0.055 -0.002  0.125
+ Arts & Entertainment         3        9    0.871     0.946    1.028 -0.075 -0.088 -0.052
+     Beauty & Fitness        12       36    0.795     0.740    0.827  0.055 -0.059  0.177
+Business & Industrial        19       55    0.627     0.690    0.673 -0.062 -0.111 -0.023
+         Food & Drink         7       21    0.805     0.834    0.851 -0.028 -0.093  0.047
+               Health         4       12    0.893     1.005    0.956 -0.112 -0.328  0.102
+        Home & Garden        14       42    0.797     0.842    0.935 -0.045 -0.089 -0.006
+               Sports         6       18    0.673     0.696    0.748 -0.023 -0.073  0.027
+         Unclassified         8       24    0.672     0.653    0.813  0.019 -0.039  0.096

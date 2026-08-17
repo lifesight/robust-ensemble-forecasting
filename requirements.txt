@@ -1,0 +1,17 @@
+# Analysis and figures.
+#
+# Verified: every result and figure in the paper regenerates byte-for-byte on
+# Python 3.10.12 with numpy 2.2.6, pandas 2.3.3, scipy 1.15.3, matplotlib 3.10.9
+# and statsmodels 0.14.6. The bounds below are the minimums the code requires.
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+matplotlib>=3.8
+statsmodels>=0.14
+
+# Base-model fitting is not part of this repository: forecasts/ holds the fitted
+# outputs. These are listed for reference only.
+# prophet>=1.1.5
+# neuralprophet>=0.8.0
+# catboost>=1.2.5
+# pymc>=5.16.2

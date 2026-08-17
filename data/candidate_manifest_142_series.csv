@@ -1,0 +1,143 @@
+series_id,org,vertical,subvertical,ndays,gaps,zero_frac,cov_cover,qualifies,excluded_reason
+cb74696614e226f145f3bf4e0533b100,72a86a208d24d68b80be0e44a8a4872d,Autos & Vehicles,Parts & Services,1751,0,0.0,1.0,True,
+07a680d6fd5e932a9507529ee1240d88,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,1711,0,0.0,1.0,True,
+68361a5fd117219059f3e21001030d43,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,1711,0,0.0,1.0,True,
+79d11f29f8848fc8589385ace51d7a98,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,1711,0,0.0,1.0,True,
+340ad8117bd4a0d0fbdc2ff4acf8a933,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,1705,0,0.0,1.0,True,
+36558b27715d6929312962cfe3a9488c,bfb6f6a326141ed6a751fc83ba836984,Home & Garden,Home Improvement,1654,0,0.0,1.0,True,
+ce6be55b8e63d8fc2dbc7071ab15db95,7059e30b528ed5f14ee9921de13248e5,Home & Garden,Bed & Bath,1642,0,0.0,1.0,True,
+37dc412832e2dd8c5938ecbf2f4dd7fd,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1610,0,0.0,1.0,True,
+51c8843bddcc604ebb3fe8d638ee5a1d,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1610,0,0.0,1.0,True,
+9e596c450a0107c984ce52eab254dce3,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1600,0,0.0,1.0,True,
+1f064c830243a1e4f6cb97856b63a76e,2b15eedfc4faa6293dc4b3bf8c1c9c1f,Apparel,Clothing Accessories,1576,0,0.0,1.0,True,
+ac1ed95f5069ab8003fb61aa7b5b42f1,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1551,0,0.0,1.0,True,
+edb2fa959b5bb803bddc33d1bd2b7ab1,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1529,0,0.0,0.999,True,
+fb41024357c824cd0c72243a94e68fd5,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1515,0,0.0,1.0,True,
+7b931b65f91d4ae452ad55dd221c1072,09113a73f8618b48b3cf53b24cd78d2f,Apparel,Footwear,1450,0,0.0,1.0,True,
+edcfa1e1cda2923ccc788b539cdd15c2,75d7dc601d55a71ee1d7932b560934ed,Apparel,Children's Clothing,1438,0,0.0,0.982,True,
+dd16aba6c30cbdd139d5dbd97d5a855e,76d1d35d893b943b098102e5e32f30ce,Apparel,Women's Clothing,1425,0,0.0,0.966,True,
+6be017619bfb9354aaa747f6c2dca447,784d6aa3cda59f59f2400332b2420a49,Apparel,Women's Clothing,1415,0,0.0,1.0,True,
+d074408382106c56fa366d6a8351bbfa,784d6aa3cda59f59f2400332b2420a49,Apparel,Women's Clothing,1415,0,0.0,0.927,True,
+6b89cf94d2e23372be3846ed656b5e47,784d6aa3cda59f59f2400332b2420a49,Apparel,Women's Clothing,1389,0,0.0,1.0,True,
+2a2486a8ad3ec118d7339927520bd62a,200b4005ea8477754ef37438e66b2f4c,Toys & Hobbies,Unclassified,1375,0,0.0,0.988,True,
+1456bfb123319921c5292bc80352ad39,098228bbe36aa86c8592de76f2447959,Home & Garden,Kitchen & Dining,1369,0,0.0,0.944,True,
+a85e68fa1eb7040cf557995d538aff66,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1357,0,0.0,0.998,True,
+bc265a40e1a910ce1fd876f039d54416,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1357,0,0.0,1.0,True,
+cbfad6a94039777963af80fff33d7502,70f3b9fb9a8f232814ce705d7641ee4f,Apparel,Footwear,1323,0,0.0,0.997,True,
+2503bb38f4348c75a2a5242ad0eeb5a8,1f9e72d9e28ddf4cf571ea5768c25a30,Home & Garden,Home & Interior Decor,1317,0,0.0,0.981,True,
+672c53b9737cabcda47d2e2132db9239,aec6d5de0a55d5d6d7631de063ee8221,Beauty & Fitness,Spas & Beauty Services,1290,0,0.0,0.999,True,
+614bac1a43db22d80b52624c920685c7,088510f2efdfd515473f8db631b732e6,Home & Garden,Home Appliances,1278,0,0.0,1.0,True,
+c6a5d39d2b6ea6a6b36bd230cb6fd7ac,df208255d3c8eea8d60fb4ae697d20de,Beauty & Fitness,Face & Body Care,1276,0,0.0,1.0,True,
+c03056f30852c0cf2e0ae70140a1c62d,3fb90b66bd509e5c19fb5353d34fae3f,Apparel,Athletic Apparel,1227,0,0.0,1.0,True,
+278b37c74c9e1f54da237f3985e8f227,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,1223,0,0.0,1.0,True,
+f4672ffd7fc2ce776075816d5b7491a6,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,1223,0,0.0,1.0,True,
+62f9eca366f56be4f0292c8e5505fc95,0d1fc3f1715b0c65776780e7ad8ac7df,Beauty & Fitness,Face & Body Care,1220,0,0.0,1.0,True,
+99cda9c940ff00569c968a2f8c706289,0d1fc3f1715b0c65776780e7ad8ac7df,Beauty & Fitness,Face & Body Care,1210,0,0.0,1.0,True,
+c8c1146aee45b05cb8a092d290426a23,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,1193,0,0.0,1.0,True,
+0dabf1ecb5f62a99092a8a05d97be3fc,0d1fc3f1715b0c65776780e7ad8ac7df,Beauty & Fitness,Face & Body Care,1190,0,0.0,0.904,True,
+ea83e2a2bd0987c6e98dac6f33f73878,ab0b8d655e7140272cab371a515e009a,Food & Drink,Food,1180,0,0.0,1.0,True,
+2d84710b67b855c77053d82382d354f8,d0f788f460b813f4729d73e4e245279e,Home & Garden,Home Improvement,1173,0,0.0,0.997,True,
+124b3f9c00ec98fb2beb2da8b155acc7,3ddd831572f29d3ccdc0c731691e5e07,Travel,Bags & Luggage,1166,0,0.0,0.998,True,
+cea862c0fa5df8b9977ed673946a1cd7,f1b558c0c4d81cfae7859504808f2d9c,Apparel,Women's Clothing,1156,0,0.0,1.0,True,
+2677651d9d592a1cfa311552d7bdc8be,93dce3c85055adb326d79aaa7d549134,Home & Garden,Home Improvement,1123,0,0.0,1.0,True,
+ce3eafeb86f73c68937e4a188173247c,2467db871d8ebb9f6dfb22f03e78fdca,Home & Garden,Home Furnishings,1097,0,0.0,1.0,True,
+826fd57057c52458a1f77cae4e3e6c67,f7e5ba45e3e337e8e90787ae0218a7ac,Home & Garden,Home & Interior Decor,1091,0,0.0,1.0,True,
+7907b3524c06df30d23829ad78a5a777,f7e5ba45e3e337e8e90787ae0218a7ac,Home & Garden,Home & Interior Decor,1088,0,0.0,1.0,True,
+796351a642a53167b2367c90e3406128,e6b75c2d5665773c58e0f736f99117e6,Beauty & Fitness,Face & Body Care,1082,0,0.0,1.0,True,
+21ae5756595080e735f52426db421505,ff5c2c32d7f1c21594c518fc6a6d4fce,Apparel,Unclassified,1064,0,0.0,1.0,True,
+895ce425aa955227df2d9722547eede7,0a207553b5f7c71274137923e816b6a1,Food & Drink,Food,1051,0,0.0,0.99,True,
+0491d49999214ac276aed27b746be5d2,33e0bf5f8d0d5073582ce096b055c472,Food & Drink,Beverages,1035,0,0.0,0.993,True,
+9e08af0fa40af40ef299ffd4feefcba2,54e10037bed257ee57ec2cd851bf27a4,Business & Industrial,Industrial Materials & Equipment,1035,0,0.0,0.997,True,
+f7493de0a760f84888105af70245bed3,4a762f02ca755b22d37393e8dbeab1a6,Apparel,Undergarments,1030,0,0.0,1.0,True,
+0349b43cddf6e720b5d582afc8cd7fd6,4a762f02ca755b22d37393e8dbeab1a6,Apparel,Undergarments,1029,0,0.0,1.0,True,
+1006734b6f3558576fbb8b5f7fe01463,258af10b41dedd7287d37831ccdc3759,Apparel,Athletic Apparel,1013,0,0.0,0.997,True,
+af96a18c84d95796e01e4876f26d2ee6,7c374835f86c472c74023b035b9deef0,Apparel,Clothing Accessories,986,0,0.0,1.0,True,
+e7417caace54626d1edc6e189896b846,7c374835f86c472c74023b035b9deef0,Apparel,Clothing Accessories,986,0,0.0,1.0,True,
+d6d00afb465c287dfbd26506b6484ad0,c91b1af7a86a8531877e63273d95c0fb,Sports,Individual Sports,980,0,0.0,0.974,True,
+914d30e0b36698c15ee12f513f387c98,074c74173cddd7d2aa14cf83841accb5,Health,Medical Devices & Equipment,974,0,0.0,1.0,True,
+c259dc05c33af7df10051b0c667114cc,5eee795d7a3ae7fef2813691ca333fab,Unclassified,Unclassified,965,0,0.0,1.0,True,
+58dc6787913cef10cecdff5bdb72e97f,eee3213700d652277941b8370c8c4dcf,Sports,Individual Sports,945,0,0.0,1.0,True,
+7bd2de31311bb7e4553f69f9791088e8,eee3213700d652277941b8370c8c4dcf,Sports,Individual Sports,945,0,0.0,1.0,True,
+cc3e67ce9f53e2c561dff95820c922e2,eee3213700d652277941b8370c8c4dcf,Sports,Individual Sports,945,0,0.0,1.0,True,
+3dd06f699b8a597e0070f0adb9929ad7,4a762f02ca755b22d37393e8dbeab1a6,Apparel,Undergarments,941,0,0.0,0.999,True,
+c66e76d49c7cfd159e3a4f8d882cf7dc,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,927,0,0.0,1.0,True,
+3340d86d751fe8213235565e69512aa2,8cfe3c2df337e1e53d19b8dc4b878cac,Beauty & Fitness,Face & Body Care,924,0,0.0,1.0,True,
+6bbe4be7e89e1f928c22abdb66b405da,5488b06e575cc0e13be2cd67325ffa33,Apparel,Unclassified,923,0,0.0,1.0,True,
+8b324eec03a20d57e08169fb5aab7684,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,913,0,0.0,1.0,True,
+827e69115b62aecef05a95d7dd25fd97,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,891,0,0.0,1.0,True,
+cb2d4d20140926a37e3db4e9d325cb6d,454371671557a9830df0f97d0b0b5c6d,Health,Medical Devices & Equipment,875,0,0.0,0.938,True,
+ee22438999b2971f51724267f9db53e1,11c423eea4b114b963a22a0018da9969,Sports,Sporting Goods,872,0,0.0,1.0,True,
+32b7b47d4e8197fbe4ccfcde1e35c0b2,32cdd76e4628ffd569c2064436367d01,Unclassified,Unclassified,836,0,0.0,1.0,True,
+6f30298d8c31b9ee540960bf602b4103,a085f316d1b9a87c7563ef017f534a8a,Health,Nutrition,835,0,0.0,1.0,True,
+cd7d11c1218f48290ceb38f5b8c519d5,f1504c791a2b4aa6fac0861259e0e212,Consumer Electronics,Audio Equipment,827,0,0.0,0.983,True,
+513211a5ba7d7c20145586b16abfda54,7569a6a9c156a0f9398fa6cfd51df5bb,Food & Drink,Unclassified,821,0,0.0,1.0,True,
+64f845b063d4d16ffdebf6a28b6001af,7569a6a9c156a0f9398fa6cfd51df5bb,Food & Drink,Unclassified,821,0,0.0,1.0,True,
+ac9965a4cc73306fa9e4fcc0ac581eb5,7569a6a9c156a0f9398fa6cfd51df5bb,Food & Drink,Unclassified,821,0,0.0,1.0,True,
+f33bf8cb1ee6c5b9d239ced807141cca,fd215d1327fbaa28cc16cd52a8e6bcac,Unclassified,Unclassified,803,0,0.0,1.0,True,
+942850f29bc16dc37f03a19e57c7064c,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,798,0,0.0,1.0,True,
+202cef337e9a72f3928e4137df73ffdd,d7c14c27fc318d0c53327638260eda8a,Pets & Animals,Dogs,791,0,0.0,0.997,True,
+e2d1a44c03082a5f6c12818035afed43,0ae6004dde7db513cf79a9092671a860,Unclassified,Unclassified,768,0,0.0,1.0,True,
+91f1bc54d242ba6c67ac981ee4e97b07,4b0d65948094e2ba39833fd78c03387c,Beauty & Fitness,Face & Body Care,766,0,0.0,1.0,True,
+a8ec66dd951d887619b18838361416d2,246b6e2ff861fde47d3bc5f5fdae92a8,Arts & Entertainment,Music & Audio,766,0,0.0,1.0,True,
+fcedb45a65cf2309f81821398c5a6031,246b6e2ff861fde47d3bc5f5fdae92a8,Arts & Entertainment,Music & Audio,766,0,0.0,1.0,True,
+acfe71e0c8a49dbe6f3f6e97d0370339,0b077049ec0b346792ab541b7b8e2cbe,Health,Oral & Dental Care,761,0,0.0,1.0,True,
+e30fb1e750bcd48122cd26dbcdfdf063,246b6e2ff861fde47d3bc5f5fdae92a8,Arts & Entertainment,Music & Audio,754,0,0.0,1.0,True,
+607ab3c5587ae83fc9aef171cac51e57,b01972e6c57c03554eb44d28aa7a92c1,Unclassified,Unclassified,747,0,0.0,1.0,True,
+0e19be3de773c27bbd83d922d8a65343,49770cde297d8d04547cef7498514c1c,Apparel,Unclassified,730,0,0.0,1.0,True,
+caf6f0773a80aa7e4aee7cd6903ebdcf,849e0a6b9077f95c1dae49f41892cdca,Sports,Individual Sports,725,0,0.0,0.999,True,
+91776990be8e142d9f645e01471d5f92,7c374835f86c472c74023b035b9deef0,Apparel,Clothing Accessories,711,0,0.0,1.0,True,
+4733bbf2dc10e3fa355d884539c1890b,32519ca78d88828bfd349fc71de7e7c8,Business & Industrial,Agriculture & Forestry,702,0,0.0,0.997,True,
+e53ac59f07f3cb3eccbeedf48874f223,f7e5ba45e3e337e8e90787ae0218a7ac,Home & Garden,Home & Interior Decor,701,0,0.0,0.994,True,
+8286b5c844e7db7e039296e953c4eeea,b264e0f09c25d4b3c6cad60ff87b9b30,Apparel,Athletic Apparel,683,0,0.0,1.0,True,
+00ca95d8da2d34228806d488eace7f8e,df2cbe9195e5f2bde9200435682a5f79,Home & Garden,Unclassified,678,0,0.0,1.0,True,
+59a3f5af29146ccdae5bd4ca434d2f42,d21504538db0b60b7c7884711fa89371,Home & Garden,Cleaning,673,0,0.0,0.999,True,
+2a35ae26ea7c217ef9c604c801ad62fc,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,642,0,0.0,0.998,True,
+4a6142b539b9a785c3de2eccfb3a9051,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,634,0,0.0,1.0,True,
+efb6069b5708f369decd8c58cbb8a53e,a310b67ecfa839debf57014dea9c9b34,Unclassified,Unclassified,634,0,0.0,1.0,True,
+8a1f897ed5faa3b027751f826ad4bd50,3b2d18b6a9553039fa93be50a343e027,Unclassified,Unclassified,630,0,0.0,1.0,True,
+2956e8a44ee4badf046e767e2177f46f,4ff06c5b913ea7e00d09ce9efe208c46,Unclassified,Unclassified,625,0,0.0,1.0,True,
+487cfe525f15bf0bb85926a779f5083c,84ede2686ee278b4e36b0b726f159b48,Home & Garden,Kitchen & Dining,623,0,0.0,1.0,True,
+3d8b85182ed395e77619d44e576119f2,e1b9e72f81403e1740a243cf82dc612b,Food & Drink,Beverages,611,0,0.0,0.998,True,
+742944ec986d4068f176f9141bd96902,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,1529,0,0.0,0.08,False,low_cov(0.08)
+4417159e680462684be6d28dcd1156d2,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,1462,0,0.0,0.031,False,low_cov(0.03)
+d8b130f0c4354657f62e8bf34db4939b,e6e7a979bc3314113a98956efb09ede3,Beauty & Fitness,Spas & Beauty Services,923,0,0.0,0.831,False,low_cov(0.83)
+cb7a6b47ef907adfb0c7f1922392225d,0e2793fc272def8aa56ece30bab692dd,Health,Nutrition,794,0,0.0,0.869,False,low_cov(0.87)
+f69077cfe58e034a10e7c20777a64934,35249ee3fae02a5749d359e07eca75c9,Beauty & Fitness,Face & Body Care,734,0,0.0,0.895,False,low_cov(0.90)
+bff180584891aa08503731ed4ceaf477,8d28b004d2d89ed65b035a9430c3eb8a,Beauty & Fitness,Face & Body Care,622,0,0.0,0.814,False,low_cov(0.81)
+d344d034e21919b74edd70ae6e943764,0d1fc3f1715b0c65776780e7ad8ac7df,Beauty & Fitness,Face & Body Care,594,0,0.0,1.0,False,short(594d)
+55d5594d67e77ea111bdf5d1169fb25f,6abecf4bd2d8313b22087e5d00f2412c,Unclassified,Fitness,592,0,0.0,1.0,False,short(592d)
+b7e5fcc21af9dcee886c4560126d7e10,66fe6c9f882f85816c126a39723fe1b9,Food & Drink,Beverages,577,0,0.0,1.0,False,short(577d)
+700c2400063bff6f9551239ff703cc7c,8899298cad9186617943d1d8decb0ae2,Food & Drink,Food,574,0,0.0,1.0,False,short(574d)
+0be2c93c1f12b4942dad2754820f49f6,c5fbe353800204351f2768f90d703b38,Apparel,Unclassified,571,0,0.0,1.0,False,short(571d)
+3dd040a60d0d888ac039d077b9b2a82d,c5fbe353800204351f2768f90d703b38,Apparel,Unclassified,571,0,0.0,1.0,False,short(571d)
+5ee547fa1d8bbc2058eea6ff426ce839,c5fbe353800204351f2768f90d703b38,Apparel,Unclassified,571,0,0.0,1.0,False,short(571d)
+cf96248a058cd86dd968c91b294a31fd,c5fbe353800204351f2768f90d703b38,Apparel,Unclassified,571,0,0.0,1.0,False,short(571d)
+eca153797bb2eea9a6f8f2d9b535ece9,9faf9deecf26fb7ac73035dbe0971beb,Sports,Sporting Goods,571,0,0.0,0.825,False,"short(571d),low_cov(0.82)"
+a271a14df6a96386813ebbeacb8409c2,eee3213700d652277941b8370c8c4dcf,Sports,Individual Sports,569,0,0.0,0.993,False,short(569d)
+bb4e9b8c6d014cbdf827b5e2088f3fc4,be42d9eb5dd05a69fa22ea9da209cc7f,Food & Drink,Beverages,559,0,0.0,1.0,False,short(559d)
+a8c326f69a412135345527310b3e7b7f,4669588367420515992d3cc3d0a1a773,Unclassified,Unclassified,528,0,0.0,1.0,False,short(528d)
+0ec2e10e291ca70fc0530afd4df28f20,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,524,0,0.0,0.357,False,"short(524d),low_cov(0.36)"
+eca3ca7817b57cdf1068983021fe20fd,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,519,0,0.0,1.0,False,short(519d)
+596eef7c71f933d820d0e485935d0e8f,04769dac8b828ec7a85676d9e2bffe6f,Beauty & Fitness,Hair Care,509,0,0.0,1.0,False,short(509d)
+d942f037b761bf034b88e6c5f2faf7fc,2a388902225d4399155f80ebf577901d,Home & Garden,Home & Interior Decor,507,0,0.0,0.89,False,"short(507d),low_cov(0.89)"
+7a34dc434636d959e268d34b5dcc599b,429c8d00704a9ef6307b49f22d5dfade,Business & Industrial,Business Services,506,0,0.0,1.0,False,short(506d)
+62f6b4623588e415253d72553e9be937,8c7d01375c3eca8e3ecfe8f1872b3136,Apparel,Clothing Accessories,505,0,0.0,1.0,False,short(505d)
+000735021aa3b94ec319dbe83d137874,8d85172419d0499b1e601c1a4e9b0a45,Home & Garden,Nursery & Playroom,494,0,0.0,0.984,False,short(494d)
+b3836b1d93a45873b278599b016357f4,069f2de2afe9a57d7265a13c52150354,Unclassified,Unclassified,487,0,0.0,1.0,False,short(487d)
+b610ea2da68030f1e5a01ac77edb199d,eb830407a05a61a3bef88f720abf9500,Health,Unclassified,484,0,0.0,1.0,False,short(484d)
+3812573c3d354413487267cffddcb52b,1d2a1cd8e7b8f74c8e3e9f9c5cbaca5c,Home & Garden,Nursery & Playroom,475,0,0.0,1.0,False,short(475d)
+5eae1c93c87d9380f8b1bc41b0716585,7a801df71696ceb035e3503253cb15cf,Consumer Electronics,Unclassified,466,0,0.0,0.998,False,short(466d)
+ed34718208bf347f41efdfc9207f01e1,6dded930ff616b1ec8a3094208238208,Home & Garden,Nursery & Playroom,465,0,0.0,0.953,False,short(465d)
+73e4c9bd52158a94ac25f1a626f33b16,2eba9f633c46be6dd29e6eb932cf847a,Safety & Survival,Safety,463,0,0.0,1.0,False,short(463d)
+c6cdba9bb4de4e1e7d289bf71566e34b,6be433bd50b2da88aa18f31056a71ea2,Apparel,Casual Apparel,463,0,0.0,0.989,False,short(463d)
+4ddf2796e00f14caad3d9cd2a0ef6e49,3f4463f3b51fc2056b97766e2373747d,Pets & Animals,Unclassified,462,0,0.0,0.972,False,short(462d)
+4829a7de3924a9693dd7640f82b336d5,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,461,0,0.0,0.0,False,"short(461d),low_cov(0.00)"
+2264fff955543cfa5c097d217e6866b7,15381c4f5db0c4003da170030e12801b,Unclassified,Unclassified,460,0,0.0,1.0,False,short(460d)
+cecec29d66339a6774395f668f4cbe10,265fb78dc0d56fcbaa3e469d56120bcc,Beauty & Fitness,Fitness,459,0,0.0,1.0,False,short(459d)
+2dd4d6617ad770d251099cfc2858caa5,058b38dc1b5a87a8d9338196cd024d47,Unclassified,Unclassified,458,0,0.0,1.0,False,short(458d)
+4b06bfbe9121f7afe429be096280daed,058b38dc1b5a87a8d9338196cd024d47,Unclassified,Unclassified,458,0,0.0,1.0,False,short(458d)
+b495f966e17c4c9ac0bea4d66aa03eba,058b38dc1b5a87a8d9338196cd024d47,Unclassified,Unclassified,458,0,0.0,1.0,False,short(458d)
+cc477a2c12ee273672e3e63fd071ed91,7569a6a9c156a0f9398fa6cfd51df5bb,Food & Drink,Unclassified,453,0,0.0,1.0,False,short(453d)
+3f52349f03794df46362488400f67591,78740ae9bb7a77b69532a81e933fd89c,Beauty & Fitness,Unclassified,452,0,0.0,1.0,False,short(452d)
+2a6e552bc1ef3229c110efe96d322576,ba773ebd7ec0a08f1d042187d086ccb4,Business & Industrial,Business Services,451,0,0.0,0.969,False,short(451d)
+e587f35a2af8f762f530dd6d3afee81f,882ce7e286d66facc66518783e2192c7,Beauty & Fitness,Face & Body Care,451,0,0.0,0.969,False,short(451d)

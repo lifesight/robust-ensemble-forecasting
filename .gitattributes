@@ -1,0 +1,10 @@
+# Normalise line endings
+* text=auto eol=lf
+
+# Binary / large artefacts: never diff or merge these
+*.png   binary
+*.pdf   binary
+*.docx  binary
+
+# Data files: treat as text but suppress diffs in review
+*.csv   text -diff
