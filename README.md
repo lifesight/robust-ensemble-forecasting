@@ -48,23 +48,28 @@ python code/supp_load.py   # must precede the other supp_* scripts
 for f in code/supp_*.py; do [ "$f" = "code/supp_load.py" ] || python "$f"; done
 ```
 
-Random seeds are fixed. Bootstrap intervals use 4,000 series-clustered resamples with `numpy.random.default_rng(0)`, and `run_all.sh` pins `SOURCE_DATE_EPOCH` so figure PDFs are byte-reproducible.
+Random seeds are fixed: bootstrap intervals use 4,000 series-clustered resamples with `numpy.random.default_rng(0)`, so the intervals are reproducible rather than merely similar. `run_all.sh` also pins `SOURCE_DATE_EPOCH`, which stops matplotlib stamping a build date into each PDF — one avoidable source of spurious diffs, though not the only one.
 
 ### Verifying a run
 
 ```bash
-git diff --stat results/ figures/
+python code/verify.py
 ```
 
-An empty diff means the run reproduced the published numbers and figures exactly.
+This compares every numeric column in `results/` against the committed copy and reports the largest deviation per file.
 
-Two files in `results/` are deposited artefacts rather than pipeline outputs, because they are emitted during base-model fitting: `cell_split_boundaries.csv` and `percell_validation_and_test_metrics.csv`.
+**Do not expect byte-identical output, and do not use `git diff` as the test.** The analysis performs floating-point reductions whose final digits depend on the BLAS implementation and library versions, so a fresh run on a different machine rewrites the result files and every figure without changing anything that matters. Reproducing this deposit on macOS with Apple Accelerate, against the Linux/OpenBLAS reference the committed files came from, moves values by at most **1.1e-9** on quantities of order 1 — nine significant figures of agreement, against a paper that reports three. `verify.py` uses a 1e-6 tolerance, comfortably above that noise and comfortably below anything the paper claims.
+
+Figures re-render differently across matplotlib versions for the same reason. Compare them by eye, not by checksum.
+
+Two files in `results/` are deposited artefacts rather than pipeline outputs, because they are emitted during base-model fitting: `cell_split_boundaries.csv` and `percell_validation_and_test_metrics.csv`. `verify.py` skips them.
 
 ## Code
 
 | Script | Produces |
 |---|---|
 | `paths.py` | Canonical locations of every input and output |
+| `verify.py` | Checks a fresh run against the deposit within tolerance |
 | `core.py` | Cell loading, non-negativity, family de-duplication, the combination rules and the selection baseline. Imported by the scripts below; run directly it writes the Section 5.7 error-correlation matrices |
 | `theta.py` | Theta benchmark per cell |
 | `analysis.py` | Tables 1, 2, 4 and 6; the leaderboard, tail bootstrap and unit-of-aggregation files |

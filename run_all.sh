@@ -31,4 +31,4 @@ cd paper && latexmk -pdf -bibtex -interaction=nonstopmode main.tex && cd ..
 
 echo
 echo "Done. Results in results/, figures in figures/, paper in paper/main.pdf"
-echo "Verify the run reproduced the published numbers:  git diff --stat results/ figures/"
+echo "Verify the run reproduced the published numbers:  python code/verify.py"
