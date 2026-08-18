@@ -48,7 +48,7 @@ python code/supp_load.py   # must precede the other supp_* scripts
 for f in code/supp_*.py; do [ "$f" = "code/supp_load.py" ] || python "$f"; done
 ```
 
-Random seeds are fixed: bootstrap intervals use 4,000 series-clustered resamples with `numpy.random.default_rng(0)`, so the intervals are reproducible rather than merely similar. `run_all.sh` also pins `SOURCE_DATE_EPOCH`, which stops matplotlib stamping a build date into each PDF — one avoidable source of spurious diffs, though not the only one.
+Random seeds are fixed: bootstrap intervals use 4,000 series-clustered resamples with `numpy.random.default_rng(0)`, except the arithmetic-mean intervals of Table 1, which use 10,000. The intervals are therefore reproducible rather than merely similar. `run_all.sh` also pins `SOURCE_DATE_EPOCH`, which stops matplotlib stamping a build date into each PDF — one avoidable source of spurious diffs, though not the only one.
 
 ### Verifying a run
 
@@ -84,9 +84,10 @@ Two files in `results/` are deposited artefacts rather than pipeline outputs, be
 | `supp_pooling.py` | Table 7 |
 | `supp_diversity.py` | Error diversity and trimmed-slot shares (Section 5.7) |
 | `supp_terciles.py` | Tercile breakdown behind Table 4 |
+| `supp_tau.py` | Sensitivity of the screened rule to the competence floor tau (Caveats) |
 | `supp_stability.py` | Reproducibility of the test ranking across origins (Section 5.3); membership vs operator in the ablation (Section 5.8) |
 
-The `supp_*` scripts print to stdout and write no files.
+The `supp_*` scripts print to stdout; only `supp_tau.py` also writes a file.
 
 ## Data dictionary
 
@@ -133,6 +134,7 @@ Forecasts are stored **before** the non-negativity constraint of Section 4.2. Ap
 | `error_correlation_signed.csv` | Pairwise Pearson correlation of signed per-period forecast error (Section 5.7). |
 | `error_correlation_magnitude.csv` | The same for error magnitudes, reported for contrast only. |
 | `theta_percell.csv` | Theta benchmark per cell. |
+| `tau_sensitivity.csv` | Screened-rule accuracy and fallback rate across the competence floor tau. |
 | `analysis_console_output.txt` | Full console output of the analysis run. |
 
 ## Table and figure map
