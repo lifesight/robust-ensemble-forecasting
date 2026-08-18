@@ -1,8 +1,11 @@
 # Analysis and figures.
 #
-# Verified: every result and figure in the paper regenerates byte-for-byte on
-# Python 3.10.12 with numpy 2.2.6, pandas 2.3.3, scipy 1.15.3, matplotlib 3.10.9
-# and statsmodels 0.14.6. The bounds below are the minimums the code requires.
+# Reference environment: Python 3.10.12 with numpy 2.2.6, pandas 2.3.3,
+# scipy 1.15.3, matplotlib 3.10.9 and statsmodels 0.14.6. Every result and
+# figure in the paper regenerates on this environment, and on others within the
+# tolerance code/verify.py applies -- not byte-for-byte, for the reasons set out
+# under "Verifying a run" in the README. The bounds below are the minimums the
+# code requires.
 numpy>=1.26
 pandas>=2.2
 scipy>=1.13

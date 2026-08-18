@@ -35,12 +35,17 @@ REC = "ens_trimmed"
 pc = pd.read_csv(RESULTS / "percell_test_metrics.csv")
 piv = pc.pivot_table(index=["series", "origin"], columns="method", values="skill")
 ORDER = [m for m in piv.columns if m != "sel_global"]
-M = piv[ORDER].values
-k, N = len(ORDER), len(piv)
+# Cells within a series are not independent, so per-cell ranks are averaged within
+# series first and the test is run on the 99 series. This is the unit the paper's
+# headline comparisons use (Section 5.9) and it is the conservative choice: it
+# widens the critical difference from 0.88 to 1.52.
+Rcell = np.array([rankdata(r) for r in piv[ORDER].values])
+Rser = pd.DataFrame(Rcell, index=piv.index, columns=ORDER).groupby(level=0).mean()
+k, N = len(ORDER), len(Rser)
 
-_, p = friedmanchisquare(*[M[:, j] for j in range(k)])
+_, p = friedmanchisquare(*[Rser[m].values for m in ORDER])
 CDv = studentized_range.ppf(0.95, k, np.inf) / np.sqrt(2) * np.sqrt(k * (k + 1) / (6 * N))
-avg = np.array([rankdata(r) for r in M]).mean(0)
+avg = Rser[ORDER].values.mean(0)
 order = np.argsort(avg)
 names = [LABEL[ORDER[i]] for i in order]
 keys = [ORDER[i] for i in order]

@@ -23,7 +23,7 @@ paper/       LaTeX source and compiled PDF
 
 **Can be reproduced.** Every table, figure and reported statistic in the paper, from the deposited forecasts, without refitting any model.
 
-**Cannot be reproduced here.** The forecasts themselves. Base-model fitting code ships with the Horizon forecasting library; the model configurations are documented in Appendix A of the paper. Validation-*window* forecasts are not retained by the pipeline, only validation-window summary losses (`data/validation_summary.csv`), which is what prevents the validation-MAE analysis listed as future work.
+**Cannot be reproduced here.** The forecasts themselves. Base-model fitting code ships with the Horizon forecasting library, along with the search spaces, seeds and library versions used to produce them; Section 4.2 of the paper describes the configuration procedure. Validation-*window* forecasts are not retained by the pipeline, only validation-window summary losses (`data/validation_summary.csv`), which is what prevents the validation-MAE analysis listed as future work.
 
 **Confirmable but not re-derivable.** `data/corpus_99_series.csv` is the *qualified* corpus: already screened to 99 series and already aggregated to three channel-spend totals. Sections 3.1–3.2 of the paper can be checked against it but not re-derived from it. `data/candidate_manifest_142_series.csv` records the disposition and exclusion reason for all 142 candidate series, which is what makes qualification auditable.
 
@@ -53,10 +53,11 @@ Random seeds are fixed: bootstrap intervals use 4,000 series-clustered resamples
 ### Verifying a run
 
 ```bash
-python code/verify.py
+bash run_all.sh          # regenerate first
+python code/verify.py    # then compare
 ```
 
-This compares every numeric column in `results/` against the committed copy and reports the largest deviation per file.
+This compares every numeric column in `results/` against the committed copy (`git show HEAD:`) and reports the largest deviation per file. **Run the pipeline first.** On an untouched clone the working tree *is* the committed copy, so `verify.py` compares the deposit against itself and reports success without having checked anything.
 
 **Do not expect byte-identical output, and do not use `git diff` as the test.** The analysis performs floating-point reductions whose final digits depend on the BLAS implementation and library versions, so a fresh run on a different machine rewrites the result files and every figure without changing anything that matters. Reproducing this deposit on macOS with Apple Accelerate, against the Linux/OpenBLAS reference the committed files came from, moves values by at most **1.1e-9** on quantities of order 1 — nine significant figures of agreement, against a paper that reports three. `verify.py` uses a 1e-6 tolerance, comfortably above that noise and comfortably below anything the paper claims.
 
@@ -83,6 +84,7 @@ Two files in `results/` are deposited artefacts rather than pipeline outputs, be
 | `supp_pooling.py` | Table 7 |
 | `supp_diversity.py` | Error diversity and trimmed-slot shares (Section 5.7) |
 | `supp_terciles.py` | Tercile breakdown behind Table 4 |
+| `supp_stability.py` | Reproducibility of the test ranking across origins (Section 5.3); membership vs operator in the ablation (Section 5.8) |
 
 The `supp_*` scripts print to stdout and write no files.
 
@@ -107,6 +109,10 @@ One row per candidate series. `qualifies` is the screening outcome; `excluded_re
 ### `data/validation_summary.csv`
 
 Per cell per model, the validation and test losses emitted during base-model fitting. `val_mape` is the criterion every selection, weighting, screening and de-duplication rule uses.
+
+### `data/summary1-99_clean.csv`
+
+The raw fitting-run summary the file above is derived from, carried unmodified so the derivation is auditable. It is the source of the one documented gap in validation coverage: series `caf6f0773a` at origin 0 has no Prophet row, so statistics that depend on validation losses are computed on 292 of the 293 evaluated cells. `code/supp_checks.py` reports this. Nothing in the pipeline reads this file except as a provenance record.
 
 ### `forecasts/{series}_origin{k}.csv`
 

@@ -14,6 +14,8 @@ authors:
     given-names: Rajeev Aravindakshan
     affiliation: Lifesight
 version: "1.0.0"
+date-released: "[DATE ON RELEASE]"
+doi: "[ZENODO DOI ON RELEASE]"
 repository-code: "https://github.com/lifesight/robust-ensemble-forecasting"
 url: "https://github.com/lifesight/robust-ensemble-forecasting"
 # Code in code/ is additionally available under the MIT License.

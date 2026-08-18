@@ -124,7 +124,11 @@ def main():
     # ---- leaderboard ---------------------------------------------------------------------
     mp = df.pivot_table(index=["series", "origin"], columns="method", values="mape")[ORDER]
     rg = df.pivot_table(index=["series", "origin"], columns="method", values="regret")[ORDER]
-    rank = piv.rank(axis=1)
+    # Average rank is taken over the ranked methods only. sel_global resolves to a
+    # single base model on this corpus, so including it would enter one forecast path
+    # twice and shift every average rank -- see the note above the Friedman test below.
+    RANKSET = [m for m in ORDER if m != "sel_global"]
+    rank = piv[RANKSET].rank(axis=1)
     g = pd.DataFrame({
         "mean": piv.mean(), "geomean": np.exp(np.log(piv.clip(lower=1e-9)).mean()),
         "median": piv.median(), "p90": piv.quantile(.90), "p95": piv.quantile(.95),
@@ -148,7 +152,6 @@ def main():
     # so it is an ex-ante RELABELLING of that model's forecasts, not a distinct column. Including
     # both would enter one forecast path twice, inflate k, and distort every average rank.
     # It is therefore excluded from the rank analysis and reported in the leaderboard with a note.
-    RANKSET = [m for m in ORDER if m != "sel_global"]
     identical = bool(np.allclose(piv["sel_global"], piv[GLOBAL]))
     print(f"\nsel_global is numerically identical to '{GLOBAL}': {identical} "
           f"-> excluded from the rank analysis to avoid double-counting")
