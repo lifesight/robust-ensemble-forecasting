@@ -40,6 +40,8 @@ pip install -r requirements.txt
 bash run_all.sh
 ```
 
+The last step builds the paper and needs a LaTeX distribution with `latexmk` (for example TeX Live or MacTeX). Without one, `run_all.sh` skips that step and everything else still runs; the deposited build is `paper/ensemble_forecasting.pdf`.
+
 Or step by step:
 
 ```bash
@@ -132,7 +134,7 @@ Per cell per model, the validation and test losses emitted during base-model fit
 
 ### `data/summary1-99_clean.csv`
 
-A cleaned copy of the same run summary, read by `code/theta.py`, `code/analysis.py` (for window lengths) and `code/supp_load.py`. It lacks one row that `validation_summary.csv` has: Prophet for series `caf6f0773a` at origin 0. The main pipeline is unaffected and evaluates all 293 cells; the supplementary analyses built on `supp_load.py` use 292, which moves the matched-loss hit rate of Section 5.3 from 25.9% to 26.0%. `code/supp_checks.py` reports the count.
+A cleaned copy of the same run summary, read by `code/theta.py`, `code/analysis.py` (for window lengths) and `code/supp_load.py`. It lacks two rows that `validation_summary.csv` has. One is Prophet for series `caf6f0773a` at origin 0: the main pipeline is unaffected and evaluates all 293 cells, but the supplementary analyses built on `supp_load.py` use 292, which moves the matched-loss hit rate of Section 5.3 from 25.9% to 26.0%, and `code/supp_checks.py` reports the count. The other is an interval-summary row (`bayesianpymc__interval`, series `c8c1146aee`, origin 2) that carries no losses and is read by no script.
 
 ### `forecasts/{series}_origin{k}.csv`
 

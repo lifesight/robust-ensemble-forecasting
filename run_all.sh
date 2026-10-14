@@ -4,9 +4,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# Matplotlib stamps a creation date into every PDF it writes, which would make
-# otherwise identical figures differ between runs. Pinning this keeps figure
-# output deterministic so `git diff figures/` is a meaningful check.
+# Matplotlib stamps a creation date into every PDF it writes. Pinning it removes
+# one avoidable source of differences between runs. To check a run, use
+# code/verify.py rather than git diff: see "Verifying a run" in the README.
 export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-1735689600}"
 
 echo "==> Error diversity (Section 5.7)"
@@ -27,8 +27,15 @@ python code/supp_load.py
 for f in code/supp_*.py; do [ "$f" = "code/supp_load.py" ] || python "$f"; done
 
 echo "==> Paper"
-cd paper && latexmk -pdf -bibtex -interaction=nonstopmode main.tex && cd ..
+if command -v latexmk >/dev/null 2>&1; then
+  (cd paper && latexmk -pdf -bibtex -interaction=nonstopmode main.tex)
+  PAPER="paper/main.pdf"
+else
+  echo "latexmk not found: skipping the paper build. Everything above is complete;"
+  echo "install a LaTeX distribution (e.g. TeX Live or MacTeX) to build the PDF too."
+  PAPER="not built (no LaTeX); the deposited copy is paper/ensemble_forecasting.pdf"
+fi
 
 echo
-echo "Done. Results in results/, figures in figures/, paper in paper/main.pdf"
+echo "Done. Results in results/, figures in figures/, paper: ${PAPER}"
 echo "Verify the run reproduced the published numbers:  python code/verify.py"

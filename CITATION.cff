@@ -36,6 +36,25 @@ keywords:
   - cross-series pooling
   - demand forecasting
   - marketing-mix modeling
+preferred-citation:
+  type: report
+  title: "Robust Ensemble Forecasting in Practice: Model Selection and Combination Across Heterogeneous Time Series"
+  authors:
+    - family-names: Singh
+      given-names: Anil Kumar
+      affiliation: Lifesight
+    - family-names: Bhardwaj
+      given-names: Sanvi
+      affiliation: Lifesight
+      email: sanvi.b@lifesight.io
+    - family-names: Nair
+      given-names: Rajeev Aravindakshan
+      affiliation: Lifesight
+  institution:
+    name: Lifesight
+  year: 2026
+  date-published: "2026-08-21"
+  url: "https://lifesight.io/resources/ensemble-forecasting/"
 references:
   - type: data
     title: "Multi-Region Marketing Mix Modelling (MMM) Dataset for Several eCommerce Brands"
