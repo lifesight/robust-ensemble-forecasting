@@ -1,7 +1,14 @@
 cff-version: 1.2.0
 title: "Robust Ensemble Forecasting in Practice: Model Selection and Combination Across Heterogeneous Time Series"
-message: "If you use this dataset or code, please cite both the paper and the archived data release."
+message: "If you use this dataset or code, please cite the paper."
 type: software
+abstract: >-
+  Data, out-of-fold forecasts and analysis code for "Robust Ensemble Forecasting
+  in Practice". 99 daily commercial series from 65 organisations, screened from a
+  public marketing-mix dataset, are evaluated at three rolling origins (293 cells)
+  for five base models, four combination rules and three selection strategies.
+  The repository regenerates every table and figure in the paper from the
+  deposited forecasts, and re-derives the corpus from the source dataset.
 authors:
   - family-names: Singh
     given-names: Anil Kumar
@@ -14,10 +21,12 @@ authors:
     given-names: Rajeev Aravindakshan
     affiliation: Lifesight
 version: "1.0.0"
-date-released: "[DATE ON RELEASE]"
-doi: "[ZENODO DOI ON RELEASE]"
+identifiers:
+  - type: url
+    value: "https://lifesight.io/resources/ensemble-forecasting/"
+    description: "Published white paper"
 repository-code: "https://github.com/lifesight/robust-ensemble-forecasting"
-url: "https://github.com/lifesight/robust-ensemble-forecasting"
+url: "https://lifesight.io/resources/ensemble-forecasting/"
 # Code in code/ is additionally available under the MIT License.
 license: "CC-BY-4.0"
 keywords:
@@ -27,3 +36,24 @@ keywords:
   - cross-series pooling
   - demand forecasting
   - marketing-mix modeling
+references:
+  - type: data
+    title: "Multi-Region Marketing Mix Modelling (MMM) Dataset for Several eCommerce Brands"
+    authors:
+      - family-names: Anderson
+        given-names: Anthony
+    year: 2024
+    version: "3"
+    publisher:
+      name: figshare
+    doi: "10.6084/m9.figshare.25314841.v3"
+    license: "CC-BY-4.0"
+  - type: software
+    title: "Horizon"
+    authors:
+      - name: "Lifesight Software Pvt Ltd"
+    repository-code: "https://github.com/Lifesight-Software-Pvt-Ltd/horizon"
+    commit: "73127ebc46b87beaad64bcc9282727a7ee48cc41"
+    license: "Apache-2.0"
+
+# Add date-released and the Zenodo doi when a release is cut.

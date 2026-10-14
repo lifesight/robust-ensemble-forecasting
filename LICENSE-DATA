@@ -6,6 +6,8 @@ This licence covers the derived data files in this repository:
 
   data/corpus_99_series.csv              the qualified 99-series corpus
   data/candidate_manifest_142_series.csv disposition of all 142 candidate series
+  data/validation_summary.csv            per-cell validation and test losses
+  data/summary1-99_clean.csv             per-cell summary metrics
   forecasts/                             per-cell base-model point forecasts
   results/                               per-cell and aggregate derived metrics
 
@@ -18,17 +20,31 @@ License text: https://creativecommons.org/licenses/by/4.0/legalcode
 -------------------------------------------------------------------------------
 Provenance and onward obligations
 
-These files are DERIVED from a publicly available e-commerce marketing dataset
-that the authors neither own nor collected. The upstream dataset is cited in the
-paper's Reproducibility and Data Availability statement.
+These files are derived from a publicly available dataset that the authors
+neither own nor collected:
 
-Two consequences follow, and anyone reusing these files should note both:
+  Anderson, Anthony (2024). Multi-Region Marketing Mix Modelling (MMM) Dataset
+  for Several eCommerce Brands. figshare. Dataset, version 3.
+  https://doi.org/10.6084/m9.figshare.25314841.v3
 
-1. The authors licence only their own contribution — the qualification screen, the
-   fitted forecasts, and the derived metrics. Any rights in the underlying source
-   data remain with its original publisher, and the upstream licence continues to
-   apply to it.
+That dataset is itself released under CC BY 4.0. Reusing these files therefore
+means crediting both this repository and the source dataset above.
 
-2. Organisation and series identifiers are hashed in this deposit and no
-   organisation is named. Attempted re-identification of any organisation in this
-   dataset is not a permitted use.
+Changes made to the source: the 143 source series were reduced to 142 candidates
+by removing one series with a corrupt purchase spike, then screened to the 99 that
+meet the history-length, completeness and media-spend-coverage bar described in
+Section 3.2 of the paper; per-channel spend columns were summed into three totals
+(Google, Meta, TikTok); and only the series and organisation identifiers, the
+industry classification, the date, the target and the three spend totals were
+retained. Everything in forecasts/ and results/ is new work computed from that
+corpus.
+
+Two further points:
+
+1. The authors license only their own contribution: the qualification screen, the
+   fitted forecasts and the derived metrics. Rights in the underlying source data
+   remain with its original publisher under its own licence.
+
+2. Organisation and series identifiers are the anonymised identifiers published
+   in the source dataset; no organisation is named. We ask that users make no
+   attempt to re-identify any organisation in it.

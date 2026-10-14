@@ -2,7 +2,9 @@
 
 Data, forecasts and analysis code for *Robust Ensemble Forecasting in Practice: Model Selection and Combination Across Heterogeneous Time Series* (Singh, Bhardwaj & Nair).
 
-**Paper:** [`paper/ensemble_forecasting.pdf`](paper/ensemble_forecasting.pdf) — preprint not yet posted.
+**Paper:** published as a white paper at [lifesight.io/resources/ensemble-forecasting](https://lifesight.io/resources/ensemble-forecasting/). The manuscript in this repository is [`paper/ensemble_forecasting.pdf`](paper/ensemble_forecasting.pdf), built from `paper/main.tex`.
+**Forecasting library:** [Horizon](https://github.com/Lifesight-Software-Pvt-Ltd/horizon), whose pre-release version produced the base-model forecasts (see below).
+**Source data:** Anderson (2024), [doi:10.6084/m9.figshare.25314841.v3](https://doi.org/10.6084/m9.figshare.25314841.v3), CC BY 4.0.
 
 ---
 
@@ -16,16 +18,18 @@ forecasts/   per-cell, per-day forecasts for all 293 evaluated cells (297 files)
 results/     derived per-cell metrics, leaderboard, bootstrap and unit-level outputs
 code/        analysis and figure scripts
 figures/     the ten figures as they appear in the paper (PNG + PDF)
-paper/       LaTeX source and compiled PDF
+paper/       LaTeX source and the PDF it builds
 ```
 
 ## What can and cannot be reproduced
 
 **Can be reproduced.** Every table, figure and reported statistic in the paper, from the deposited forecasts, without refitting any model.
 
-**Cannot be reproduced here.** The forecasts themselves. Base-model fitting code ships with the Horizon forecasting library, along with the search spaces, seeds and library versions used to produce them; Section 4.2 of the paper describes the configuration procedure. Validation-*window* forecasts are not retained by the pipeline, only validation-window summary losses (`data/validation_summary.csv`), which is what prevents the validation-MAE analysis listed as future work.
+**Re-derivable from the public source.** The qualified corpus and the candidate manifest follow from the source dataset through `code/qualify.py`; see [Source data](#source-data).
 
-**Confirmable but not re-derivable.** `data/corpus_99_series.csv` is the *qualified* corpus: already screened to 99 series and already aggregated to three channel-spend totals. Sections 3.1–3.2 of the paper can be checked against it but not re-derived from it. `data/candidate_manifest_142_series.csv` records the disposition and exclusion reason for all 142 candidate series, which is what makes qualification auditable.
+**Not reproducible from released code: the forecasts themselves.** They were produced with a pre-release version of [Horizon](https://github.com/Lifesight-Software-Pvt-Ltd/horizon). Its public history at commit [`73127eb`](https://github.com/Lifesight-Software-Pvt-Ltd/horizon/tree/73127ebc46b87beaad64bcc9282727a7ee48cc41) (28 July 2026) records the model implementations, the hyperparameter grids in `horizon_forecaster/config/default_params.yaml`, the seeds, and the pinned dependency versions in `pyproject.toml`. The per-cell harness that split each series and issued forecasts from the end of its training window is not released. Horizon's first public release, 1.0.0, differs from that version in ways that change the forecasts: it refits on training and validation data before forecasting the test window, sizes the windows differently, and adds a trend term to SARIMAX on undifferenced series. The deposited forecasts are therefore the authoritative inputs; Section 7 of the paper discusses the SARIMAX point.
+
+Validation-*window* forecasts are not retained by the pipeline, only validation-window summary losses (`data/validation_summary.csv`), which is what prevents the validation-MAE analysis listed as future work.
 
 ## Reproducing
 
@@ -71,6 +75,7 @@ Two files in `results/` are deposited artefacts rather than pipeline outputs, be
 |---|---|
 | `paths.py` | Canonical locations of every input and output |
 | `verify.py` | Checks a fresh run against the deposit within tolerance |
+| `qualify.py` | Derives the corpus and candidate manifest from the source dataset (not run by `run_all.sh`; needs the source file) |
 | `core.py` | Cell loading, non-negativity, family de-duplication, the combination rules and the selection baseline. Imported by the scripts below; run directly it writes the Section 5.7 error-correlation matrices |
 | `theta.py` | Theta benchmark per cell |
 | `analysis.py` | Tables 1, 2, 4 and 6; the leaderboard, tail bootstrap and unit-of-aggregation files |
@@ -89,14 +94,28 @@ Two files in `results/` are deposited artefacts rather than pipeline outputs, be
 
 The `supp_*` scripts print to stdout; only `supp_tau.py` also writes a file.
 
+## Source data
+
+The corpus is derived from version 3 of a public dataset, released under CC BY 4.0:
+
+> Anderson, Anthony (2024). *Multi-Region Marketing Mix Modelling (MMM) Dataset for Several eCommerce Brands*. figshare. Dataset, version 3. https://doi.org/10.6084/m9.figshare.25314841.v3
+
+The source file, `conjura_mmm_data.csv` (about 37 MB), is not redistributed here. To re-derive the corpus, download it from the DOI above and run:
+
+```bash
+python code/qualify.py --raw path/to/conjura_mmm_data.csv
+```
+
+The script removes the one series with a corrupt purchase spike, applies the screen of Section 3.2 of the paper, and compares its output with the deposit. Against the published file (md5 `84fc8f323644b2a5fc21d0cd1a4af985`) the candidate manifest reproduces byte for byte, and identifiers, dates, labels and the target reproduce exactly. The spend totals agree to about nine significant figures (relative difference at most 5e-10) rather than digit for digit, because the deposit was built from a copy of version 3 whose currency columns had been re-exported at slightly reduced precision. Outputs go to `code/.cache/` and never overwrite the deposit.
+
 ## Data dictionary
 
 ### `data/corpus_99_series.csv` — 106,924 rows
 
 | Column | Description |
 |---|---|
-| `SERIES_ID` | Hashed organisation–territory identifier. 99 distinct values. |
-| `ORGANISATION_ID` | Hashed organisation identifier. 65 distinct values. |
+| `SERIES_ID` | Organisation–territory identifier, as published anonymised in the source (`MMM_TIMESERIES_ID`). 99 distinct values. |
+| `ORGANISATION_ID` | Organisation identifier, as published anonymised in the source. 65 distinct values. |
 | `ORGANISATION_VERTICAL` | Industry vertical. 13 named values plus `Unclassified` (8 series). |
 | `ORGANISATION_SUBVERTICAL` | Subvertical. 30 named values plus `Unclassified`. |
 | `DATE_DAY` | Calendar date, `YYYY-MM-DD`. Range 2019-07-21 to 2024-06-02. |
@@ -105,15 +124,15 @@ The `supp_*` scripts print to stdout; only `supp_tau.py` also writes a file.
 
 ### `data/candidate_manifest_142_series.csv`
 
-One row per candidate series. `qualifies` is the screening outcome; `excluded_reason` records `short(Nd)` and/or `low_cov(x)`. Of 142 candidates, 99 qualified: 33 excluded on history length alone, 6 on media-spend coverage alone, 4 on both. The corrupt-spike organisation described in Section 3.2 was removed *before* this manifest was written and so does not appear in it.
+One row per candidate series. `qualifies` is the screening outcome; `excluded_reason` records `short(Nd)` and/or `low_cov(x)`. Of 142 candidates, 99 qualified: 33 excluded on history length alone, 6 on media-spend coverage alone, 4 on both. The corrupt-spike organisation described in Section 3.2 is removed *before* candidates are recorded, by the spike rule in `code/qualify.py`, and so does not appear here.
 
 ### `data/validation_summary.csv`
 
-Per cell per model, the validation and test losses emitted during base-model fitting. `val_mape` is the criterion every selection, weighting, screening and de-duplication rule uses.
+Per cell per model, the validation and test losses emitted during base-model fitting. `val_mape` is the criterion every selection, weighting, screening and de-duplication rule uses. `code/core.py` reads it, and it carries all five validation scores for every evaluated cell.
 
 ### `data/summary1-99_clean.csv`
 
-The raw fitting-run summary the file above is derived from, carried unmodified so the derivation is auditable. It is the source of the one documented gap in validation coverage: series `caf6f0773a` at origin 0 has no Prophet row, so statistics that depend on validation losses are computed on 292 of the 293 evaluated cells. `code/supp_checks.py` reports this. Nothing in the pipeline reads this file except as a provenance record.
+A cleaned copy of the same run summary, read by `code/theta.py`, `code/analysis.py` (for window lengths) and `code/supp_load.py`. It lacks one row that `validation_summary.csv` has: Prophet for series `caf6f0773a` at origin 0. The main pipeline is unaffected and evaluates all 293 cells; the supplementary analyses built on `supp_load.py` use 292, which moves the matched-loss hit rate of Section 5.3 from 25.9% to 26.0%. `code/supp_checks.py` reports the count.
 
 ### `forecasts/{series}_origin{k}.csv`
 
@@ -163,12 +182,16 @@ Forecasts are stored **before** the non-negativity constraint of Section 4.2. Ap
 
 The manuscript, figures and code are released under **CC BY 4.0**, with the code in `code/` additionally available under the **MIT License** at your option. See `LICENSE`.
 
-The derived data in `data/`, `forecasts/` and `results/` is released under **CC BY 4.0**. See `LICENSE-DATA`.
+The derived data in `data/`, `forecasts/` and `results/` is released under **CC BY 4.0**. See `LICENSE-DATA`. It derives from a CC BY 4.0 source, so reuse should credit both this repository and Anderson (2024).
+
+GitHub's sidebar may not identify the licence, because `LICENSE` combines CC BY 4.0 with an MIT option; the file itself is authoritative.
 
 ## Privacy
 
-No personal data is used. All organisation and series identifiers are hashed, no organisation is named, and the organisation–territory field is not carried in the deposited data — only the hashed series and organisation identifiers. The corpus is a screened subset of a publicly available e-commerce marketing dataset that the authors neither collected nor own.
+No personal data is used. Organisation and series identifiers are the anonymised identifiers published with the source dataset, no organisation is named, and the source's territory names are not carried into the deposited data. The corpus is a screened subset of that publicly available dataset, which the authors neither collected nor own.
 
 ## Citation
 
-See `CITATION.cff`. Please cite both the paper and the archived data release.
+See `CITATION.cff`. Please cite the paper and, if you use the data, the source dataset:
+
+> Anderson, Anthony (2024). *Multi-Region Marketing Mix Modelling (MMM) Dataset for Several eCommerce Brands*. figshare. Dataset, version 3. https://doi.org/10.6084/m9.figshare.25314841.v3
