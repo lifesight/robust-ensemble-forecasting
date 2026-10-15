@@ -21,6 +21,8 @@ authors:
     given-names: Rajeev Aravindakshan
     affiliation: Lifesight
 version: "1.0.0"
+date-released: "2026-10-15"
+doi: "10.5281/zenodo.23387858"
 identifiers:
   - type: url
     value: "https://lifesight.io/resources/ensemble-forecasting/"
@@ -74,5 +76,3 @@ references:
     repository-code: "https://github.com/Lifesight-Software-Pvt-Ltd/horizon"
     commit: "73127ebc46b87beaad64bcc9282727a7ee48cc41"
     license: "Apache-2.0"
-
-# Add date-released and the Zenodo doi when a release is cut.

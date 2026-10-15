@@ -1,10 +1,13 @@
 # Robust Ensemble Forecasting in Practice
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23387858.svg)](https://doi.org/10.5281/zenodo.23387858)
+
 Data, forecasts and analysis code for *Robust Ensemble Forecasting in Practice: Model Selection and Combination Across Heterogeneous Time Series* (Singh, Bhardwaj & Nair).
 
 **Paper:** published as a white paper at [lifesight.io/resources/ensemble-forecasting](https://lifesight.io/resources/ensemble-forecasting/). The manuscript in this repository is [`paper/ensemble_forecasting.pdf`](paper/ensemble_forecasting.pdf), built from `paper/main.tex`.
 **Forecasting library:** [Horizon](https://github.com/Lifesight-Software-Pvt-Ltd/horizon), whose pre-release version produced the base-model forecasts (see below).
 **Source data:** Anderson (2024), [doi:10.6084/m9.figshare.25314841.v3](https://doi.org/10.6084/m9.figshare.25314841.v3), CC BY 4.0.
+**Archived release:** Zenodo, [doi:10.5281/zenodo.23387858](https://doi.org/10.5281/zenodo.23387858). This DOI covers every version and resolves to the latest.
 
 ---
 
@@ -194,6 +197,6 @@ No personal data is used. Organisation and series identifiers are the anonymised
 
 ## Citation
 
-See `CITATION.cff`. Please cite the paper and, if you use the data, the source dataset:
+See `CITATION.cff`. The archived repository is [doi:10.5281/zenodo.23387858](https://doi.org/10.5281/zenodo.23387858). Please cite the paper and, if you use the data, the source dataset:
 
 > Anderson, Anthony (2024). *Multi-Region Marketing Mix Modelling (MMM) Dataset for Several eCommerce Brands*. figshare. Dataset, version 3. https://doi.org/10.6084/m9.figshare.25314841.v3
